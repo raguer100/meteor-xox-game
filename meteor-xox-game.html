@@ -1,0 +1,42 @@
+<head>
+  <title>Tic Tac Toe</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Tic Tac Toe</h1>
+    </header>
+    {{> loginButtons}}
+    {{> newgame}}
+    <div class="buttonContainer">
+      <button disabled="{{#if disabled1}}true{{/if}}" class="text1" type="button">{{text1}}</button><span>-</span>
+      <button disabled="{{#if disabled2}}true{{/if}}" class="text2" type="button">{{text2}}</button><span>-</span>
+      <button disabled="{{#if disabled3}}true{{/if}}" class="text3" type="button">{{text3}}</button>
+      <br />
+      <button disabled="{{#if disabled4}}true{{/if}}" class="text4" type="button">{{text4}}</button><span>-</span>
+      <button disabled="{{#if disabled5}}true{{/if}}" class="text5" type="button">{{text5}}</button><span>-</span>
+      <button disabled="{{#if disabled6}}true{{/if}}" class="text6" type="button">{{text6}}</button>
+      <br />
+      <button disabled="{{#if disabled7}}true{{/if}}" class="text7" type="button">{{text7}}</button><span>-</span>
+      <button disabled="{{#if disabled8}}true{{/if}}" class="text8" type="button">{{text8}}</button><span>-</span>
+      <button disabled="{{#if disabled9}}true{{/if}}" class="text9" type="button">{{text9}}</button>
+    </div>
+    <span>{{turn}}</span><br />
+    <span>{{state}}</span>
+    <br /><h1>LOBY LISTS</h1><br />
+    {{#each gamelists}}
+      {{> gamelist}}
+    {{/each}}
+  </div>
+</body>
+
+<template name="newgame">
+  <button disabled="{{#if visable}}true{{/if}}" class="new-game" type="button">Create Lobby</button>
+</template>
+
+<template name="gamelist">
+  <span>{{name.player1Address}}</span>
+  <button id="join" class={{name.player1}}>Join</button>
+  <br />
+</template>
